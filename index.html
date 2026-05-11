@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI短剧 - 热门短剧推荐平台</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-film"></i>
+            <span>AI短剧</span>
+        </div>
+        <nav class="nav">
+            <a href="#home" class="nav-link active">首页</a>
+            <a href="#hot" class="nav-link">热门短剧</a>
+            <a href="#categories" class="nav-link">分类浏览</a>
+            <a href="#ai-create" class="nav-link">AI生成</a>
+        </nav>
+        <div class="header-actions">
+            <button class="search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+            <button class="upload-btn">
+                <i class="fas fa-upload"></i>
+                <span>发布</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="main-content">
+        <!-- 首页轮播 -->
+        <section id="home" class="hero-section">
+            <div class="hero-carousel">
+                <div class="carousel-item active">
+                    <div class="carousel-bg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                    <div class="carousel-content">
+                        <span class="badge">AI生成</span>
+                        <h1>重生八零：开局娶了校花</h1>
+                        <p>穿越回到1980年，带着未来记忆开启传奇人生...</p>
+                        <div class="carousel-stats">
+                            <span><i class="fas fa-eye"></i> 2.3亿</span>
+                            <span><i class="fas fa-heart"></i> 568万</span>
+                        </div>
+                        <button class="btn btn-primary">立即观看</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-bg" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                    <div class="carousel-content">
+                        <span class="badge">热门</span>
+                        <h1>闪婚后，总裁每天都在装穷</h1>
+                        <p>一场意外的闪婚，揭开了他隐藏的身份...</p>
+                        <div class="carousel-stats">
+                            <span><i class="fas fa-eye"></i> 1.8亿</span>
+                            <span><i class="fas fa-heart"></i> 423万</span>
+                        </div>
+                        <button class="btn btn-primary">立即观看</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-bg" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                    <div class="carousel-content">
+                        <span class="badge">新上线</span>
+                        <h1>修仙从卖烧烤开始</h1>
+                        <p>平凡少年意外获得修仙传承，从夜市开始逆袭...</p>
+                        <div class="carousel-stats">
+                            <span><i class="fas fa-eye"></i> 9800万</span>
+                            <span><i class="fas fa-heart"></i> 312万</span>
+                        </div>
+                        <button class="btn btn-primary">立即观看</button>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-indicators">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+        </section>
+
+        <!-- 热门短剧 -->
+        <section id="hot" class="section">
+            <div class="section-header">
+                <h2>🔥 热门短剧</h2>
+                <a href="#" class="view-more">查看全部</a>
+            </div>
+            <div class="short-drama-grid" id="hotGrid">
+                <!-- 内容由JS生成 -->
+            </div>
+        </section>
+
+        <!-- 分类浏览 -->
+        <section id="categories" class="section">
+            <div class="section-header">
+                <h2>📚 分类浏览</h2>
+            </div>
+            <div class="categories-list">
+                <button class="category-btn active" data-category="all">全部</button>
+                <button class="category-btn" data-category="romance">言情</button>
+                <button class="category-btn" data-category="reborn">重生</button>
+                <button class="category-btn" data-category="xianxia">仙侠</button>
+                <button class="category-btn" data-category="urban">都市</button>
+                <button class="category-btn" data-category="time">穿越</button>
+                <button class="category-btn" data-category="suspense">悬疑</button>
+                <button class="category-btn" data-category="comedy">喜剧</button>
+            </div>
+            <div class="short-drama-grid" id="categoryGrid">
+                <!-- 内容由JS生成 -->
+            </div>
+        </section>
+
+        <!-- AI生成 -->
+        <section id="ai-create" class="section">
+            <div class="ai-create-card">
+                <div class="ai-left">
+                    <h2>🤖 AI智能生成短剧</h2>
+                    <p>输入你的创意想法，AI帮你自动生成精彩短剧剧本和视频</p>
+                    <div class="ai-form">
+                        <textarea id="aiPrompt" placeholder="描述你想要的短剧剧情..."></textarea>
+                        <div class="ai-options">
+                            <select id="aiGenre">
+                                <option value="romance">言情</option>
+                                <option value="reborn">重生</option>
+                                <option value="xianxia">仙侠</option>
+                                <option value="urban">都市</option>
+                                <option value="time">穿越</option>
+                            </select>
+                            <select id="aiLength">
+                                <option value="short">短篇 (10集)</option>
+                                <option value="medium">中篇 (20集)</option>
+                                <option value="long">长篇 (50集)</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary btn-lg" id="generateBtn">
+                            <i class="fas fa-magic"></i>
+                            生成短剧
+                        </button>
+                    </div>
+                </div>
+                <div class="ai-right">
+                    <div class="ai-showcase">
+                        <div class="showcase-item">
+                            <div class="showcase-icon">
+                                <i class="fas fa-wand-magic"></i>
+                            </div>
+                            <h3>智能剧本生成</h3>
+                            <p>AI自动编写精彩剧情</p>
+                        </div>
+                        <div class="showcase-item">
+                            <div class="showcase-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <h3>AI视频制作</h3>
+                            <p>自动生成视频内容</p>
+                        </div>
+                        <div class="showcase-item">
+                            <div class="showcase-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3>虚拟演员</h3>
+                            <p>AI生成逼真角色</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 排行榜 -->
+        <section class="section">
+            <div class="section-header">
+                <h2>🏆 人气排行榜</h2>
+            </div>
+            <div class="ranking-list">
+                <!-- 内容由JS生成 -->
+            </div>
+        </section>
+    </main>
+
+    <!-- 播放弹窗 -->
+    <div class="play-modal" id="playModal" style="display: none;">
+        <div class="modal-overlay" onclick="closePlayModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="playTitle">短剧标题</h3>
+                <button class="close-btn" onclick="closePlayModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="video-player">
+                <div class="video-placeholder">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+                <div class="video-controls">
+                    <button class="control-btn">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    <button class="control-btn play-btn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button class="control-btn">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <span class="time">00:00 / 03:45</span>
+                </div>
+            </div>
+            <div class="episode-list" id="episodeList">
+                <!-- 集数列表 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- AI生成结果弹窗 -->
+    <div class="ai-result-modal" id="aiResultModal" style="display: none;">
+        <div class="modal-overlay" onclick="closeAIResultModal()"></div>
+        <div class="modal-content ai-modal">
+            <div class="modal-header">
+                <h3>🎬 AI生成结果</h3>
+                <button class="close-btn" onclick="closeAIResultModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="ai-result-content">
+                <div class="result-preview">
+                    <div class="preview-image">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h4 id="resultTitle">短剧标题</h4>
+                </div>
+                <div class="result-info">
+                    <div class="info-row">
+                        <span class="label">类型</span>
+                        <span class="value" id="resultGenre">言情</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">集数</span>
+                        <span class="value" id="resultEpisodes">20集</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">状态</span>
+                        <span class="value">已生成</span>
+                    </div>
+                </div>
+                <div class="result-script">
+                    <h4>剧情简介</h4>
+                    <p id="resultScript">AI生成的剧情简介...</p>
+                </div>
+                <div class="result-actions">
+                    <button class="btn btn-secondary">编辑剧本</button>
+                    <button class="btn btn-primary">立即发布</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
